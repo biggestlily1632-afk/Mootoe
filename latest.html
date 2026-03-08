@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>穆頭 | 首頁</title>
+<title>最新影片偵測 | 穆頭</title>
 
 <style>
 body {
@@ -63,22 +63,38 @@ summary { font-weight:bold; cursor:pointer; font-size:20px; text-shadow: 2px 2px
 
 </head>
 <body>
-  <a href="latest.html" target="_blank" class="latest-link">最新影片</a>
-
   <div class="content">
-    <div class="title">穆頭</div>
-    <details open>
-      <summary>關於我</summary>
-      <div style="line-height:1.8; margin-top:10px;">
-        <p><strong>嘿，我是穆頭，一個熱愛生存和PVP的玩家，喜歡斧頭！</strong></p>
+    <div class="title" style="font-size:28px;">🎬 最新影片發布</div>
+    <div class="video-box" style="text-align:center;">
+      <div id="status">正在同步 YouTube 數據...</div>
+      <div id="video-wrapper" class="video-container" style="display:none; margin-top:15px;">
+        <iframe id="latest-iframe" src="" allowfullscreen></iframe>
       </div>
-    </details>
-    <div class="button-container">
-      <a class="social-button yt-btn" href="https://www.youtube.com/@Moo_toe" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">前往 YouTube</a><br>
-      <a class="social-button dc-btn" href="https://discord.gg/j6hcjgeJmT" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png">加入 Discord</a><br>
-      <a class="social-button ig-btn" href="https://www.instagram.com/moo_toe.ig?igsh=MTVndGpqeGwzYWHYYw==" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png">追蹤 Instagram</a>
+      <h3 id="video-title" style="margin-top:15px; font-size:18px;"></h3>
+      <a id="video-link" href="#" target="_blank" style="color:#ff4444; font-weight:bold; text-decoration:none; display:none;">在 YouTube 上觀看 ↗</a>
     </div>
-    <div style="text-align:center; color:#888; font-size:14px; margin-top:50px;">© 2026 乙級黑貓與穆頭所有</div>
+    <div style="text-align:center;"><a href="index.html" style="color:#aaa; text-decoration:none; font-size:14px;">← 回到首頁</a></div>
   </div>
+  <script>
+    async function fetchLatest() {
+      const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=UCG_FPYIR8ies9lxyjNk-O8g`;
+      const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+      try {
+        const res = await fetch(apiUrl);
+        const data = await res.json();
+        if (data.status === 'ok' && data.items.length > 0) {
+          const latest = data.items[0];
+          const vId = latest.link.split('v=')[1];
+          document.getElementById('status').innerText = "偵測到最新影片：";
+          document.getElementById('video-title').innerText = latest.title;
+          document.getElementById('latest-iframe').src = `https://www.youtube.com/embed/${vId}`;
+          document.getElementById('video-link').href = latest.link;
+          document.getElementById('video-link').style.display = "inline-block";
+          document.getElementById('video-wrapper').style.display = "block";
+        }
+      } catch (e) { document.getElementById('status').innerText = "偵測失敗。"; }
+    }
+    window.onload = fetchLatest;
+  </script>
 </body>
 </html>
