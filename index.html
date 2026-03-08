@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>穆頭</title>
+<style>
+body {
+  margin:0; padding:0; font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; color:#fff;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/8Lt7zDDY/IMG-1409.webp') no-repeat center top; background-size: cover; background-attachment: fixed;
+  min-height: 100vh;
+}
+.content {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.title {
+  text-align:center;
+  font-size: 36px;
+  font-weight:bold;
+  margin: 40px 0;
+  text-shadow: 3px 3px 5px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+details, .section-box {
+  background-color: rgba(0,0,0,0.85);
+  border-radius:15px;
+  padding:20px;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto 25px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+summary {
+  font-weight:bold; cursor:pointer; font-size:20px; color:#fff;
+  text-shadow: 2px 2px 4px #000;
+}
+.intro-text p, .intro-text li {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* --- 社群按鈕修正 --- */
+.button-container { text-align:center; }
+.social-button {
+  display:inline-flex; align-items:center; justify-content:center;
+  background-color:#222; color:#fff !important; text-decoration:none; border-radius:12px;
+  padding:15px; width:85%; max-width:320px; margin:10px auto; font-size:17px;
+  font-weight: bold;
+  border: 1px solid #444;
+  transition: 0.3s ease;
+}
+/* 各平台專屬懸停顏色 */
+.yt-btn:hover { background-color: #ff0000 !important; border-color: #ff0000; transform: scale(1.03); }
+.dc-btn:hover { background-color: #5865f2 !important; border-color: #5865f2; transform: scale(1.03); }
+.ig-btn:hover { background-color: #e1306c !important; border-color: #e1306c; transform: scale(1.03); }
+
+.social-button img { height:24px; margin-right:12px; }
+
+.latest-video {
+  text-align:center; margin:30px auto; padding:15px;
+  background-color:rgba(0,0,0,0.8); border-radius:15px;
+  max-width: 600px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.video-container {
+  position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;
+}
+.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* --- 綠色直接下載按鈕 --- */
+.download-btn {
+  background-color: #28a745 !important;
+  color: #fff !important;
+  text-decoration: none;
+  padding: 15px 35px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(40,167,69,0.4);
+  border: none;
+  cursor: pointer;
+}
+.download-btn:hover {
+  background-color: #218838 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(40,167,69,0.6);
+}
+
+.footer { text-align:center; color:#888; font-size:14px; margin-top:50px; padding-bottom:40px; text-shadow: 1px 1px 2px #000; }
+</style>
+</head>
+<body>
+
+  <div class="content">
+    <div class="title">穆頭</div>
+
+    <details open>
+      <summary>關於我</summary>
+      <div class="intro-text">
+        <p><strong></strong></p>
+        <ul>
+        <p>
+          <strong>嘿，我是穆頭，一個熱愛生存和PVP的玩家，喜歡斧頭！
+        </p>
+        <p>
+        </p>
+      </div>
+    </details>
+
+    <div class="button-container">
+      <a class="social-button yt-btn" href="https://www.youtube.com/@Moo_toe" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">前往 YouTube
+      </a><br>
+      <a class="social-button dc-btn" href="https://discord.gg/j6hcjgeJmT" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png">加入 Discord
+      </a><br>
+      <a class="social-button ig-btn" href="https://www.instagram.com/moo_toe.ig?igsh=MTVndGpqeGwzYWHYYw==" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png">追蹤 Instagram
+      </a>
+    </div>
+
+    <!-- 修正：移除多餘的 </div> 標籤 -->
+
+    <div class="footer">© 2026 乙級黑貓與穆頭所有</div>
+  </div>
+
+</body>
+</html>
